@@ -1,0 +1,9 @@
+.infobox{
+    text-align: center;
+    margin-top: 5%;
+}
+.cardcantanier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
