@@ -1,0 +1,51 @@
+.hourly-forecast {
+  padding: 16px 0 16px 16px;
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  opacity: 0.65;
+  margin: 0 0 12px;
+  padding-right: 16px;
+}
+
+.hourly-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  padding-right: 16px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hourly-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.hourly-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 52px;
+  flex-shrink: 0;
+}
+
+.hourly-time {
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.hourly-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.hourly-temp {
+  font-size: 20px;
+  font-weight: 500;
+}
