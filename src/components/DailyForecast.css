@@ -5,15 +5,15 @@
 .daily-list {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0;
 }
 
 .daily-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 14px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .daily-item:last-child {
@@ -23,50 +23,51 @@
 .daily-date {
   font-size: 17px;
   font-weight: 500;
-  width: 60px;
+  width: 52px;
   flex-shrink: 0;
 }
 
-.daily-icon {
-  font-size: 22px;
-  width: 32px;
-  text-align: center;
+.daily-weather-icon {
+  color: rgba(255, 255, 255, 0.9);
   flex-shrink: 0;
 }
 
 .daily-temps {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex: 1;
-  margin-left: 4px;
 }
 
 .daily-low {
   font-size: 17px;
   font-weight: 500;
-  opacity: 0.55;
-  width: 32px;
+  opacity: 0.45;
+  width: 30px;
   text-align: right;
+  flex-shrink: 0;
 }
 
 .daily-high {
   font-size: 17px;
   font-weight: 500;
-  width: 32px;
+  width: 30px;
+  flex-shrink: 0;
 }
 
 .temp-bar {
   flex: 1;
   height: 4px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 2px;
+  position: relative;
   overflow: hidden;
 }
 
 .temp-bar-fill {
+  position: absolute;
+  top: 0;
   height: 100%;
   border-radius: 2px;
   background: linear-gradient(90deg, #5eb3f6, #ffd60a);
-  transition: width 0.3s ease;
 }

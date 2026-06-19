@@ -1,4 +1,5 @@
-import { getWeatherEmoji, formatTime } from "../utils/weather";
+import WeatherIcon from "./WeatherIcon";
+import { formatTime } from "../utils/weather";
 import "./HourlyForecast.css";
 
 export default function HourlyForecast({ hourly }) {
@@ -9,12 +10,12 @@ export default function HourlyForecast({ hourly }) {
 
   return (
     <section className="glass-card hourly-forecast">
-      <h2 className="card-title">HOURLY FORECAST</h2>
+      <h2 className="card-title">Hourly forecast</h2>
       <div className="hourly-scroll">
         {hourly.map((item, i) => (
           <div className="hourly-item" key={i}>
             <span className="hourly-time">{i === 0 ? "Now" : formatTime(item.time)}</span>
-            <span className="hourly-icon">{getWeatherEmoji(item.icon, isNight)}</span>
+            <WeatherIcon condition={item.icon} isNight={isNight} size={28} />
             <span className="hourly-temp">{item.temp}°</span>
           </div>
         ))}

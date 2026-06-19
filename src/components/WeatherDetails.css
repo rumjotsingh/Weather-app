@@ -1,37 +1,52 @@
 .weather-details {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  padding: 0 20px;
+  padding: 16px;
 }
 
-.detail-card {
-  padding: 16px;
+.details-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
 }
 
-.detail-icon {
-  font-size: 22px;
-  line-height: 1;
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.detail-row:first-of-type {
+  padding-top: 0;
+}
+
+.detail-icon-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.detail-icon-svg svg {
+  width: 22px;
+  height: 22px;
 }
 
 .detail-label {
-  font-size: 13px;
-  font-weight: 500;
-  opacity: 0.65;
-  letter-spacing: 0.02em;
+  flex: 1;
+  font-size: 17px;
+  font-weight: 400;
+  opacity: 0.85;
 }
 
 .detail-value {
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-@media (min-width: 480px) {
-  .weather-details {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }

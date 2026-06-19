@@ -1,65 +1,52 @@
 .current-weather {
   text-align: center;
-  padding: 12px 20px 24px;
+  padding: 8px 20px 28px;
 }
 
 .current-date {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 500;
-  opacity: 0.85;
-  margin: 0 0 4px;
-  letter-spacing: 0.01em;
+  opacity: 0.8;
+  margin: 0 0 2px;
 }
 
 .city-name {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 600;
-  margin: 0 0 8px;
-  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  letter-spacing: -0.03em;
+}
+
+.hero-icon {
   display: flex;
-  align-items: baseline;
   justify-content: center;
-  gap: 8px;
-}
-
-.country {
-  font-size: 18px;
-  font-weight: 400;
-  opacity: 0.7;
-}
-
-.temp-display {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin: 4px 0;
-}
-
-.weather-emoji {
-  font-size: 48px;
-  line-height: 1;
-  margin-right: -8px;
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .temp-value {
-  font-size: 96px;
+  font-size: 104px;
   font-weight: 200;
-  letter-spacing: -0.04em;
-  line-height: 1;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  margin: 0;
 }
 
 .condition-text {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
-  margin: 0 0 4px;
+  margin: 4px 0 6px;
   text-transform: capitalize;
+  opacity: 0.95;
 }
 
 .high-low {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
-  opacity: 0.85;
+  opacity: 0.75;
   margin: 0;
-  letter-spacing: 0.05em;
+}
+
+.weather-icon {
+  display: block;
 }

@@ -1,34 +1,30 @@
+import DetailIcon from "./DetailIcon";
 import "./WeatherDetails.css";
 
-const DETAIL_ICONS = {
-  "Feels Like": "🌡️",
-  Humidity: "💧",
-  Wind: "💨",
-  Pressure: "⏲️",
-  Visibility: "👁️",
-};
-
 export default function WeatherDetails({ info }) {
-  const details = [
-    { label: "Feels Like", value: `${info.feelsLike}°` },
-    { label: "Humidity", value: `${info.humidity}%` },
-    { label: "Wind", value: `${info.wind} km/h` },
-    { label: "Pressure", value: `${info.pressure} hPa` },
+  const rows = [
+    { type: "feelsLike", label: "Feels Like", value: `${info.feelsLike}°` },
+    { type: "humidity", label: "Humidity", value: `${info.humidity}%` },
+    { type: "wind", label: "Wind", value: `${info.wind} km/h` },
+    { type: "pressure", label: "Pressure", value: `${info.pressure} hPa` },
   ];
 
   if (info.visibility) {
-    details.push({ label: "Visibility", value: `${info.visibility} km` });
+    rows.push({ type: "visibility", label: "Visibility", value: `${info.visibility} km` });
   }
 
   return (
-    <section className="weather-details">
-      {details.map((d) => (
-        <div className="glass-card detail-card" key={d.label}>
-          <span className="detail-icon">{DETAIL_ICONS[d.label]}</span>
-          <span className="detail-label">{d.label}</span>
-          <span className="detail-value">{d.value}</span>
-        </div>
-      ))}
+    <section className="glass-card weather-details">
+      <h2 className="card-title">Details</h2>
+      <div className="details-list">
+        {rows.map((row) => (
+          <div className="detail-row" key={row.label}>
+            <DetailIcon type={row.type} />
+            <span className="detail-label">{row.label}</span>
+            <span className="detail-value">{row.value}</span>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

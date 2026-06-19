@@ -14,7 +14,7 @@ import "./WeatherApp.css";
 
 export default function WeatherApp() {
   const [weather, setWeather] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const loadWeather = useCallback(async (fetcher) => {
@@ -31,7 +31,15 @@ export default function WeatherApp() {
   }, []);
 
   useEffect(() => {
-    loadWeather(() => fetchWeather("Delhi"));
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        loadWeather(() =>
+          fetchWeatherByCoords(pos.coords.latitude, pos.coords.longitude)
+        );
+      },
+      () => loadWeather(() => fetchWeather("London"))
+    );
   }, [loadWeather]);
 
   const handleSearch = (city) => {
@@ -55,17 +63,20 @@ export default function WeatherApp() {
 
   const theme = weather
     ? getWeatherTheme(weather.condition)
-    : getWeatherTheme("Clear");
+    : { gradient: "linear-gradient(180deg, #0a1628 0%, #1a2744 50%, #2a3f5f 100%)" };
 
   return (
-    <div className="weather-app" style={{ background: theme.gradient }}>
+    <div
+      className="weather-app"
+      style={{ background: theme.gradient, "--bg-tone": theme.gradient }}
+    >
       <div className="weather-content">
         <SearchBar onSearch={handleSearch} onLocate={handleLocate} loading={loading} />
 
         {error && (
           <div className="error-banner" role="alert">
             <span>{error}</span>
-            <button onClick={() => setError(null)} aria-label="Dismiss">✕</button>
+            <button onClick={() => setError(null)} aria-label="Dismiss">×</button>
           </div>
         )}
 
@@ -73,6 +84,13 @@ export default function WeatherApp() {
           <div className="loading-state">
             <div className="spinner" />
             <p>Loading weather…</p>
+          </div>
+        )}
+
+        {!loading && !weather && !error && (
+          <div className="welcome-state">
+            <h2>Weather</h2>
+            <p>Search for a city or use your location to get started.</p>
           </div>
         )}
 

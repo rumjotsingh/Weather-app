@@ -102,23 +102,6 @@ export function getWeatherTheme(condition, hour = new Date().getHours()) {
   return themes[condition] || themes.Clouds;
 }
 
-export function getWeatherEmoji(condition, isNight = false) {
-  const map = {
-    Clear: isNight ? "🌙" : "☀️",
-    Clouds: "☁️",
-    Rain: "🌧️",
-    Drizzle: "🌦️",
-    Thunderstorm: "⛈️",
-    Snow: "❄️",
-    Mist: "🌫️",
-    Fog: "🌫️",
-    Haze: "🌫️",
-    Smoke: "🌫️",
-    Dust: "💨",
-  };
-  return map[condition] || "🌤️";
-}
-
 export function formatTime(timestamp) {
   return new Date(timestamp).toLocaleTimeString("en-US", {
     hour: "numeric",

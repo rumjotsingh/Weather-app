@@ -37,9 +37,9 @@ export default function SearchBar({ onSearch, onLocate, loading }) {
         aria-label="Use my location"
         title="Use my location"
       >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-          <circle cx="12" cy="12" r="3" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <path d="M12 21s6-5.33 6-10a6 6 0 1 0-12 0c0 4.67 6 10 6 10z" />
+          <circle cx="12" cy="11" r="2" />
         </svg>
       </button>
     </div>
